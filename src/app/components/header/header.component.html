@@ -1,0 +1,10 @@
+<header>
+    <img src="assets/svg/logo.svg">
+    <form (ngSubmit)="search()">
+        <mat-form-field appearance="outline">
+            <input matInput [formControl]="query" placeholder="Search" required>
+            <button mat-mini-fab aria-label="header search button" color="primary" matPrefix type="submit" [disabled]="query.invalid"><img src="assets/svg/search.svg"></button>
+        </mat-form-field>
+        <!-- <button mat-raised-button color="primary" type="submit" [disabled]="query.invalid">Search</button> -->
+    </form>
+</header>
