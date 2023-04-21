@@ -1,0 +1,9 @@
+<p>search-list works!</p>
+
+<!-- <div *ngIf="searchPhotos.posts !== searchPhotos.emptyPost"> -->
+<div>
+    <!-- {{searchPhotos.posts | async | json}} -->
+    <div *ngFor="let photo of constSearchItem.results">
+        <img src="{{photo.urls.small}}">
+    </div>
+</div>

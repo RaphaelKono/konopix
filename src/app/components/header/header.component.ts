@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SearchPhotosService } from 'src/app/services/search-photos.service';
 import { FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,15 +9,14 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class HeaderComponent {
 
-  query = new FormControl('',[Validators.required]);
+  query = new FormControl('', [Validators.required]);
 
-  constructor(private searchPhotos: SearchPhotosService) {
+  constructor(private router: Router, private route: ActivatedRoute) {
   }
 
-  search() {
-    if (this.query.valid && this.query.value) {
-      this.searchPhotos.searchPhotos(this.query.value);
-    }
-  
+
+  openSearch() {
+    if (this.query.valid && this.query.value)
+      this.router.navigate([this.query.value], { relativeTo: this.route });
   }
 }
