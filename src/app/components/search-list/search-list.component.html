@@ -1,9 +1,23 @@
 <p>search-list works!</p>
 
-<!-- <div *ngIf="searchPhotos.posts !== searchPhotos.emptyPost"> -->
-<div>
+<!-- <div *ngIf="searchPhotos.posts !== searchPhotos.emptyPost">
+    {{searchPhotos.posts| async | json}}
+</div> -->
+<div style="display: flex; gap: 5px;">
     <!-- {{searchPhotos.posts | async | json}} -->
-    <div *ngFor="let photo of constSearchItem.results">
-        <img src="{{photo.urls.small}}">
+    <div>
+        <div *ngFor="let photo of col1" class="one">
+            <img src="{{photo.urls.small}}">
+        </div>
+    </div>
+    <div>
+        <div *ngFor="let photo of col2">
+            <img src="{{photo.urls.small}}">
+        </div>
+    </div>
+    <div>
+        <div *ngFor="let photo of col3">
+            <img src="{{photo.urls.small}}">
+        </div>
     </div>
 </div>
