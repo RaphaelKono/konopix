@@ -1,8 +1,11 @@
+@import "../../../assets/scss/mixin.scss";
+@import "../../../assets/scss/company-design.scss";
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+    @include flex(space-between, center);
+    padding-inline: $padding-wrapper;
+    padding-block: 1rem;
+    max-width: 75.5rem;
+    margin-inline: auto;
     button {
         img {
             height: 1.5rem;

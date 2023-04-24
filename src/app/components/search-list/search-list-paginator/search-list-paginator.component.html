@@ -1,0 +1,16 @@
+<section class="paginator-section">
+    <div class="paginator">
+        <div class="paginator-child">
+            <span>Page {{currentPage}} of {{total_pages}}</span>
+            <button [disabled]="currentPage === 1" mat-flat-button color="primary" (click)="movePage(-1)"><img src="assets/svg/arrow_back.svg"></button>
+            <button [disabled]="currentPage >= total_pages" mat-flat-button color="primary" (click)="movePage(1)"><img src="assets/svg/arrow_forward.svg"></button>
+        </div>
+        <span>To Page </span>
+        <form (ngSubmit)="paginate()">
+            <input [formControl]="page" value="currentPage">
+            <span>/ {{total_pages}}</span>
+            <button mat-flat-button color="primary">Go</button>
+        </form>
+    </div>
+    <mat-error *ngIf="page.invalid">Please enter a value between 1 and {{total_pages}}</mat-error>
+</section>

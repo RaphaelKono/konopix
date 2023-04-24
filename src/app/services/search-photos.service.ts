@@ -16,21 +16,12 @@ export class SearchPhotosService {
 
   constructor(private http: HttpClient) { }
 
-  // searchPhotos(query: string) {
-  //   const headers = new HttpHeaders({
-  //     'Authorization': 'Client-ID ' + this.apiKey,
-  //     'Accept-Version': 'v1',
-  //   });
-  //   const url = `${this.apiUrl}search/photos?page=1&query=${query}`;
-  //   this.posts = this.http.get(url, { headers });
-  // }
-
-  getPhotos(query: string): Observable<HttpResponse<PhotosResponseBody>> {
+  getPhotos(query: string, page:number): Observable<HttpResponse<PhotosResponseBody>> {
     const headers = new HttpHeaders({
       'Authorization': 'Client-ID ' + this.apiKey,
       'Accept-Version': 'v1'
     });
-    const params = new HttpParams().set('page',1).set('query',query);
+    const params = new HttpParams().set('page',page).set('query',query);
     const url = `${this.apiUrl}search/photos?`;
     return this.http.get<PhotosResponseBody>(url, { headers, params, observe:'response' });
   }

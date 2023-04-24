@@ -1,23 +1,25 @@
-<p>search-list works!</p>
+<app-search-list-info [total]="total" [queryItem]="queryItem"></app-search-list-info>
 
-<!-- <div *ngIf="searchPhotos.posts !== searchPhotos.emptyPost">
-    {{searchPhotos.posts| async | json}}
-</div> -->
-<div style="display: flex; gap: 5px;">
-    <!-- {{searchPhotos.posts | async | json}} -->
-    <div>
-        <div *ngFor="let photo of col1" class="one">
-            <img src="{{photo.urls.small}}">
+<section class="photo-list" *ngIf="total > 0">
+    <div class="col-1">
+        <div *ngFor="let photo of col1">
+            <a><img src="{{photo.urls.small}}"></a>
         </div>
     </div>
-    <div>
+    <div class="col-2">
         <div *ngFor="let photo of col2">
-            <img src="{{photo.urls.small}}">
+            <a><img src="{{photo.urls.small}}"></a>
         </div>
     </div>
-    <div>
+    <div class="col-3">
         <div *ngFor="let photo of col3">
-            <img src="{{photo.urls.small}}">
+            <a><img src="{{photo.urls.small}}"></a>
         </div>
     </div>
+</section>
+
+<div class="loadMore">
+    <button *ngIf="currentPage < total_pages" mat-flat-button color="primary" (click)="loadMore()">Load more</button>
 </div>
+
+<app-search-list-paginator *ngIf="total > 0" [currentPage]="currentPage" [total_pages]="total_pages" [queryItem]="queryItem" (pageChanged)="onPageChanged($event)"></app-search-list-paginator>

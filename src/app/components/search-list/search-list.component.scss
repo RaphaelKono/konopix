@@ -1,4 +1,37 @@
+@import "./../../../assets/scss/mixin.scss";
+@import "./../../../assets/scss/company-design.scss";
+section {
+    max-width: 75.5rem;
+    margin-inline: auto;
+    padding-inline: $padding-wrapper;
+    h1 {
+        font-size: 2rem !important;
+        line-height: 2.5rem !important;
+    }
+}
+
+mat-card {
+    max-width: 75.5rem;
+    margin-inline: auto;
+}
+
+.photo-list {
+    @include flex(center, unset);
+    gap: 0.25rem;
+    margin-block: 1rem;
+}
+
 img {
     display: block;
-    padding-bottom: 5px;
+    padding-bottom: 0.25rem;
+    width: 100%;
+}
+
+.paginator {
+    @include flex(flex-end, center);
+}
+
+.loadMore {
+    @include flex(center);
+    padding: 2rem;
 }

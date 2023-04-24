@@ -1,0 +1,36 @@
+@import "./../../../../assets/scss/mixin.scss";
+@import "./../../../../assets/scss/company-design.scss";
+section {
+    @include flex(unset, center, column);
+    padding-block: 10rem;
+    position: relative;
+    color: white;
+}
+
+figure {
+    @extend .overlay;
+    display: block;
+    margin: 0;
+    z-index: -2;
+    img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: 50% bottom;
+    }
+}
+
+.bg-overlay {
+    @extend .overlay;
+    background: linear-gradient(65deg, rgba(0, 181, 173, 0.6) 0%, rgba($clr-accent, 0.8) 100%);
+    z-index: -1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

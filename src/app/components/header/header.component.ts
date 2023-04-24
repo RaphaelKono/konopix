@@ -11,12 +11,11 @@ export class HeaderComponent {
 
   query = new FormControl('', [Validators.required]);
 
-  constructor(private router: Router, private route: ActivatedRoute) {
-  }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
 
   openSearch() {
     if (this.query.valid && this.query.value)
-      this.router.navigate([this.query.value], { relativeTo: this.route });
+      this.router.navigate([this.query.value + '&page=' + '1'], { relativeTo: this.route });
   }
 }
