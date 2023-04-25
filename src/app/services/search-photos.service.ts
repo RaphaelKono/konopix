@@ -5,6 +5,7 @@ import { EMPTY, Observable, catchError, throwError } from 'rxjs';
 import { PhotosResponseBody } from '../interfaces/photos-response-body';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { PhotoDetail } from '../interfaces/photo-detail';
 
 @Injectable({
   providedIn: 'root'
@@ -29,11 +30,11 @@ export class SearchPhotosService {
     .pipe(catchError(this.handleError));
   }
 
-  getPhoto(id: string): Observable<any> {
+  getPhoto(id: string): Observable<PhotoDetail> {
     const headers = this.headers;
     const url = `${this.apiUrl}/photos/${id}`;
-    return this.http.get<any>(url, { headers })
-    .pipe(catchError(this.handleError));;
+    return this.http.get<PhotoDetail>(url, { headers })
+    .pipe(catchError(this.handleError));
   }
 
   handleError(error: HttpErrorResponse): Observable<never>{
