@@ -29,3 +29,9 @@ mat-divider {
         width: 10rem;
     }
 }
+
+@media(max-width: 380px) {
+    section {
+        padding-inline: 1rem;
+    }
+}

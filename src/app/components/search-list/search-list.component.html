@@ -2,12 +2,15 @@
     <app-search-list-info [total]="total" [queryItem]="queryItem"></app-search-list-info>
 
     <section class="photo-list" *ngIf="total > 0">
-        <div *ngFor="let column of [col1,col2,col3]; let i = index">
+        <div *ngFor="let column of [col1,col2,col3]; let i = index" class="three-col">
             <div [ngClass]="'col-'+(i+1)">
                 <div *ngFor="let photo of column">
                     <button (click)="navigateToRoute('photos/',photo.id)" class="btn-unset btn-photo"><img src="{{photo.urls.small}}" class="img-photo"></button>
                 </div>
             </div>
+        </div>
+        <div *ngFor="let photo of photos" class="responsive-col">
+            <button (click)="navigateToRoute('photos/',photo.id)" class="btn-unset btn-photo"><img src="{{photo.urls.small}}" class="img-photo"></button>
         </div>
     </section>
 

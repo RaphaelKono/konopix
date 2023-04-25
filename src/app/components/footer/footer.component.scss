@@ -3,10 +3,22 @@
 section {
     padding-block: 4rem;
     background: linear-gradient(65deg, rgba($clr-primary, 0.6) 0%, rgba($clr-accent, 0.8) 100%);
-    * {
-        @include flex(center, center);
+    footer {
+        @include flex(space-between, center);
         max-width: 75.5rem;
         margin-inline: auto;
         padding-inline: $padding-wrapper;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
+
+@media(max-width: 380px) {
+    section {
+        footer {
+            padding-inline: 1rem;
+        }
     }
 }

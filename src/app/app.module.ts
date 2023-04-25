@@ -13,8 +13,10 @@ import { SearchListComponent } from './components/search-list/search-list.compon
 import { PhotoDetailsComponent } from './components/photo-details/photo-details.component';
 import { SearchListInfoComponent } from './components/search-list/search-list-info/search-list-info.component';
 import { SearchListPaginatorComponent } from './components/search-list/search-list-paginator/search-list-paginator.component';
+import { HomeSearchComponent } from './components/home/home-search/home-search.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LegalNoticeComponent } from './components/legal-notice/legal-notice.component';
+
 
 // Material Design Modules
 import { MatInputModule } from '@angular/material/input';
@@ -37,6 +39,7 @@ import {MatChipsModule} from '@angular/material/chips';
     SearchListPaginatorComponent,
     FooterComponent,
     LegalNoticeComponent,
+    HomeSearchComponent
   ],
   imports: [
     BrowserModule,

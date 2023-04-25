@@ -6,7 +6,9 @@
     <form (ngSubmit)="openSearch()">
         <mat-form-field appearance="outline">
             <input matInput [formControl]="query" placeholder="Search">
-            <button mat-mini-fab aria-label="header search button" color="primary" matPrefix type="submit" [disabled]="query.invalid"><img src="assets/svg/search.svg"></button>
+            <button mat-mini-fab aria-label="header search button" color="primary" matPrefix type="submit" [disabled]="query.invalid">
+                <img src="assets/svg/search.svg">
+            </button>
         </mat-form-field>
     </form>
 </header>

@@ -52,8 +52,33 @@ mat-card {
 .loadMore {
     @include flex(center);
     padding: 2rem;
+    button {
+        padding: .5rem 6rem;
+    }
 }
 
 .min-height {
     min-height: calc(100vh - 85px - 148px - 2rem);
+}
+
+.responsive-col {
+    display: none;
+}
+
+@media(max-width:540px) {
+    .photo-list {
+        @include flex(unset, center, column);
+    }
+    .responsive-col {
+        display: unset;
+    }
+    .three-col {
+        display: none;
+    }
+}
+
+@media(max-width: 380px) {
+    section {
+        padding-inline: 1rem;
+    }
 }

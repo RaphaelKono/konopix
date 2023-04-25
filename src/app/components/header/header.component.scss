@@ -20,6 +20,9 @@ header {
 }
 
 @media (max-width: 540px) {
+    mat-form-field {
+        max-width: 12.5rem;
+    }
     .logo-small {
         display: unset;
         height: 3rem;
