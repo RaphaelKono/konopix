@@ -36,3 +36,10 @@ header {
         --mdc-fab-container-color: rgba(0, 0, 0, 0.16);
     }
 }
+
+.btn-unset {
+    background-color: unset;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}

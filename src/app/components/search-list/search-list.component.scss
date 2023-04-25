@@ -21,10 +21,28 @@ mat-card {
     margin-block: 1rem;
 }
 
-img {
+.img-photo {
     display: block;
-    padding-bottom: 0.25rem;
     width: 100%;
+    &:hover {
+        filter: brightness(0.5);
+    }
+}
+
+.btn-photo {
+    position: relative;
+    &:hover {
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, .25) 70%, rgba(0, 0, 0, .25) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
 }
 
 .paginator {
@@ -34,4 +52,8 @@ img {
 .loadMore {
     @include flex(center);
     padding: 2rem;
+}
+
+.min-height {
+    min-height: calc(100vh - 85px - 148px - 2rem);
 }

@@ -1,12 +1,12 @@
 <div class="search-result-wrapper">
     <section>
         <h1>
-            <span *ngIf="total > 0">{{total | number}} </span>
-            <span *ngIf="total === 0">Unfortunately, no </span>
-            <span>results found.</span>
+            <span *ngIf="total > 0">{{total | number}} results found.</span>
+            <span *ngIf="total === 0">Unfortunately, no results found.</span>
         </h1>
         <h2 *ngIf="total > 0">Enjoy browsing your results for "{{queryItem}}"</h2>
         <div *ngIf="total === 0">
+            <p>No results found for "{{queryItem}}".</p>
             <p>You may try:</p>
             <ul>
                 <li>Pay attention to the spelling.</li>

@@ -6,10 +6,33 @@ header {
     padding-block: 1rem;
     max-width: 75.5rem;
     margin-inline: auto;
+    height: 85px;
     button {
         img {
             height: 1.5rem;
             width: 1.5rem;
         }
+    }
+}
+
+.logo-small {
+    display: none;
+}
+
+@media (max-width: 540px) {
+    .logo-small {
+        display: unset;
+        height: 3rem;
+        width: 3.3rem;
+    }
+    .logo-extended {
+        display: none;
+    }
+}
+
+@media(max-width:380px) {
+    header {
+        padding-inline: 1rem;
+        gap: .5rem;
     }
 }

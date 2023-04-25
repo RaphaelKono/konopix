@@ -1,25 +1,19 @@
-<app-search-list-info [total]="total" [queryItem]="queryItem"></app-search-list-info>
+<div class="min-height">
+    <app-search-list-info [total]="total" [queryItem]="queryItem"></app-search-list-info>
 
-<section class="photo-list" *ngIf="total > 0">
-    <div class="col-1">
-        <div *ngFor="let photo of col1">
-            <a><img src="{{photo.urls.small}}"></a>
+    <section class="photo-list" *ngIf="total > 0">
+        <div *ngFor="let column of [col1,col2,col3]; let i = index">
+            <div [ngClass]="'col-'+(i+1)">
+                <div *ngFor="let photo of column">
+                    <button (click)="navigateToRoute('photos/',photo.id)" class="btn-unset btn-photo"><img src="{{photo.urls.small}}" class="img-photo"></button>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-2">
-        <div *ngFor="let photo of col2">
-            <a><img src="{{photo.urls.small}}"></a>
-        </div>
-    </div>
-    <div class="col-3">
-        <div *ngFor="let photo of col3">
-            <a><img src="{{photo.urls.small}}"></a>
-        </div>
-    </div>
-</section>
+    </section>
 
-<div class="loadMore">
-    <button *ngIf="currentPage < total_pages" mat-flat-button color="primary" (click)="loadMore()">Load more</button>
+    <div class="loadMore">
+        <button *ngIf="currentPage < total_pages" mat-flat-button color="primary" (click)="loadMore()">Load more</button>
+    </div>
+
+    <app-search-list-paginator *ngIf="total > 0" [currentPage]="currentPage" [total_pages]="total_pages" [queryItem]="queryItem" (pageChanged)="onPageChanged($event)"></app-search-list-paginator>
 </div>
-
-<app-search-list-paginator *ngIf="total > 0" [currentPage]="currentPage" [total_pages]="total_pages" [queryItem]="queryItem" (pageChanged)="onPageChanged($event)"></app-search-list-paginator>

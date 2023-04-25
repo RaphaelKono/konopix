@@ -6,4 +6,5 @@ export interface Links2 {
     portfolio: string
     following: string
     followers: string
+    related?: string
   }

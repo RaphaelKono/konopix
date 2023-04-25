@@ -1,1 +1,27 @@
-<p>photo-details works!</p>
+<div class="min-height">
+
+    <div class="go-back"><button mat-flat-button color="primary" (click)="goBack()" class="btn-go-back">Go back</button></div>
+    <section>
+        <mat-card class="details-card" *ngIf="photoDetail">
+            <mat-card-header>
+                <div mat-card-avatar [ngStyle]="myStyles"></div>
+                <mat-card-title>{{photoDetail.user.name}}</mat-card-title>
+                <mat-card-subtitle>#{{photoDetail.user.username}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="{{photoDetail.urls.full}}">
+            <mat-card-content>
+                <p>
+                    {{photoDetail.description}}
+                </p>
+                <mat-divider></mat-divider>
+                <p>Views: {{photoDetail.views | number}}</p>
+                <p>Downloads: {{photoDetail.downloads | number}}</p>
+                <p>Created at: {{photoDetail.created_at | date}}</p>
+                <mat-chip-set role="list">
+                    <mat-chip role="listitem" *ngFor="let tag of photoDetail.tags">
+                        <button class="btn-unset" (click)="navigateToSearch(tag.title)">{{tag.title}}</button></mat-chip>
+                </mat-chip-set>
+            </mat-card-content>
+        </mat-card>
+    </section>
+</div>

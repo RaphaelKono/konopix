@@ -9,10 +9,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HeaderComponent {
 
-  query = new FormControl('', [Validators.required]);
+  query = new FormControl('', [Validators.required, Validators.pattern('\\S.*')]);
 
+  
   constructor(private router: Router, private route: ActivatedRoute) { }
-
 
   openSearch() {
     if (this.query.valid && this.query.value)

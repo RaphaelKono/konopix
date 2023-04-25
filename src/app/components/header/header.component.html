@@ -1,5 +1,8 @@
 <header>
-    <img src="assets/svg/logo-extended.svg">
+    <a [routerLink]="''">
+        <img src="assets/svg/logo-extended.svg" class="logo-extended">
+        <img src="assets/svg/logo.svg" class="logo-small">
+    </a>
     <form (ngSubmit)="openSearch()">
         <mat-form-field appearance="outline">
             <input matInput [formControl]="query" placeholder="Search">
