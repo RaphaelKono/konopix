@@ -1,7 +1,7 @@
 @import "../../../assets/scss/company-design.scss";
 @import "../../../assets/scss/mixin.scss";
 section {
-    padding-block: 4rem;
+    padding-block: 3rem;
     background: linear-gradient(65deg, rgba($clr-primary, 0.6) 0%, rgba($clr-accent, 0.8) 100%);
     footer {
         @include flex(space-between, center);
@@ -11,6 +11,10 @@ section {
         a {
             text-decoration: none;
             color: white;
+        }
+        img {
+            height: 2.925rem;
+            width: 3.3rem;
         }
     }
 }
